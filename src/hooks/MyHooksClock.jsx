@@ -1,9 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 
 const MyHooksClock = () => {
     const [date, setDate] = useState(new Date());
 
     const [count, setCount] = useState(0);
+
+    const numArray = useMemo(() => calcNum(count), [count]);
+
+
+    function calcNum(count){
+
+        console.log("calc")
+        const array =[];
+        for(let i=0;i<10;i++){
+            array.push(count*i);
+        }
+
+        return array;
+    }
 
     const tick = () => {
         console.log(new Date());
@@ -38,6 +52,7 @@ const MyHooksClock = () => {
             <h2>It is {date.toLocaleTimeString()}.</h2>
             <button onClick={()=>setCount(count+1)}>count + 1</button>
             <h3>{count}</h3>
+            <h3>{numArray.join(",")}</h3>
         </div>
     );
 };
