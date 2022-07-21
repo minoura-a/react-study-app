@@ -1,4 +1,5 @@
 import './App.css';
+import MyCallBackHook from './hooks/MyCallbackHook';
 import MyHooksClock from './hooks/MyHooksClock';
 import MyHooksComponent from './hooks/MyHooksComponent';
 import LifeCycleComponent from './life-cycle/LifeCycleComponent';
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       {/*<LifeCycleComponent/>*/}
       {/*<MyHooksComponent/>*/}
-      <MyHooksClock/>
+      {/*<MyHooksClock/>*/}
+      <MyCallBackHook/>
     </div>
   );
 }
